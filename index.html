@@ -7,79 +7,197 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .gradient-text { background: linear-gradient(90deg, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth; 
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #030712; /* Very Dark Blue/Black */
+        }
+
+        /* Star Animation Canvas Styling */
+        #starCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+        }
+
+        .gradient-text { 
+            background: linear-gradient(90deg, #10b981, #3b82f6); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="text-white">
 
-    <nav class="fixed w-full z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold gradient-text">PRO-DEV</div>
-            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-widest">
-                <a href="#home" class="hover:text-emerald-400 transition">Home</a>
-                <a href="#work" class="hover:text-emerald-400 transition">My Work</a>
-                <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <canvas id="starCanvas"></canvas>
 
-    <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4">
-        <h2 class="text-emerald-400 text-lg mb-4">Available for Fiverr Projects</h2>
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Building Digital <br><span class="gradient-text">Experiences.</span></h1>
-        <p class="text-gray-400 max-w-xl mb-8">මම ඔයාගේ අවශ්‍යතාවය අනුව High-quality Projects නිර්මාණය කරලා දෙනවා. මගේ කලින් වැඩ පහලින් බලන්න පුළුවන්.</p>
-        <a href="#work" class="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-full font-bold transition transform hover:scale-105">View My Work</a>
-    </section>
-
-    <section id="work" class="py-20 bg-gray-800/50">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 text-center">Featured <span class="text-emerald-400">Projects</span></h2>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition group">
-                    <div class="h-48 bg-gray-700 flex items-center justify-center">
-                        <i class="fa-solid fa-code text-4xl text-emerald-400"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">E-Commerce Web App</h3>
-                        <p class="text-sm text-gray-400 mb-4">Fiverr එකේ කරපු සම්පූර්ණ Online Store එකක්.</p>
-                        <a href="#" class="text-emerald-400 font-semibold hover:underline">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition group">
-                    <div class="h-48 bg-gray-700 flex items-center justify-center">
-                        <i class="fa-solid fa-mobile-screen text-4xl text-emerald-400"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Mobile UI Design</h3>
-                        <p class="text-sm text-gray-400 mb-4">User friendly mobile interfaces.</p>
-                        <a href="#" class="text-emerald-400 font-semibold hover:underline">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="bg-gray-900 rounded-xl overflow-hidden border border-gray-700 hover:border-emerald-500 transition group">
-                    <div class="h-48 bg-gray-700 flex items-center justify-center">
-                        <i class="fa-solid fa-database text-4xl text-emerald-400"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-xl mb-2">Backend API</h3>
-                        <p class="text-sm text-gray-400 mb-4">NodeJS වලින් කරපු backend project එකක්.</p>
-                        <a href="#" class="text-emerald-400 font-semibold hover:underline">View Project →</a>
-                    </div>
+    <div class="content-wrapper">
+        <nav class="fixed w-full z-50 bg-gray-900/60 backdrop-blur-md border-b border-gray-800">
+            <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+                <div class="text-2xl font-bold gradient-text tracking-tighter">PRO-PORTFOLIO</div>
+                <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-medium">
+                    <a href="#home" class="hover:text-emerald-400 transition">Home</a>
+                    <a href="#work" class="hover:text-emerald-400 transition">Projects</a>
+                    <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </nav>
 
-    <footer id="contact" class="py-12 border-t border-gray-800 text-center">
-        <h2 class="text-2xl font-bold mb-6">Let's Work Together</h2>
-        <div class="flex justify-center space-x-6 mb-8">
-            <a href="https://github.com" class="text-2xl hover:text-emerald-400"><i class="fa-brands fa-github"></i></a>
-            <a href="https://fiverr.com" class="text-2xl hover:text-emerald-400"><i class="fa-solid fa-briefcase"></i></a>
-        </div>
-        <p class="text-gray-500 text-sm">© 2026 Designed by YourName. All rights reserved.</p>
-    </footer>
+        <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4">
+            <div class="inline-block px-4 py-1 border border-emerald-500/30 rounded-full bg-emerald-500/10 text-emerald-400 text-xs mb-6 tracking-widest uppercase">
+                Available for Fiverr Freelance
+            </div>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight">
+                Design. Code.<br><span class="gradient-text">Innovate.</span>
+            </h1>
+            <p class="text-gray-400 max-w-lg mb-10 text-lg leading-relaxed">
+                මම ඔයාගේ අවශ්‍යතාවය අනුව උසස් මට්ටමේ වෙබ් අඩවි සහ මෘදුකාංග නිර්මාණය කරමි.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#work" class="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold transition shadow-lg shadow-emerald-500/20">
+                    Explore My Work
+                </a>
+            </div>
+        </section>
 
+        <section id="work" class="py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col items-center mb-16 text-center">
+                    <h2 class="text-4xl font-bold mb-4">Latest Projects</h2>
+                    <div class="h-1 w-20 bg-emerald-500 rounded-full"></div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+                        <div class="h-52 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
+                             <i class="fa-solid fa-layer-group text-5xl text-emerald-500/20 group-hover:scale-110 transition duration-500"></i>
+                             <div class="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-xl mb-3">Professional UI Kit</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Modern design systems built for scalability and performance.</p>
+                            <a href="#" class="text-emerald-400 font-bold text-sm tracking-wider uppercase hover:text-emerald-300">View Details →</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+                        <div class="h-52 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                             <i class="fa-solid fa-rocket text-5xl text-emerald-500/20 group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-xl mb-3">SaaS Application</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Full-stack solutions with seamless user experiences.</p>
+                            <a href="#" class="text-emerald-400 font-bold text-sm tracking-wider uppercase">View Details →</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
+                        <div class="h-52 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
+                             <i class="fa-solid fa-code-branch text-5xl text-emerald-500/20 group-hover:scale-110 transition duration-500"></i>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="font-bold text-xl mb-3">API Integration</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Complex backend systems and third-party integrations.</p>
+                            <a href="#" class="text-emerald-400 font-bold text-sm tracking-wider uppercase">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact" class="py-20 border-t border-white/5 bg-black/20 text-center">
+            <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+            <div class="flex justify-center space-x-8 mb-10">
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p class="text-gray-500 text-xs tracking-widest uppercase">© 2026 Your Name • Developed for Fiverr</p>
+        </footer>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('starCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let stars = [];
+        const starCount = 150;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Star {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2;
+                this.speed = Math.random() * 0.5 + 0.2;
+                this.opacity = Math.random();
+            }
+
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = -10;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.shadowBlur = 5;
+                ctx.shadowColor = "white";
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            for (let i = 0; i < starCount; i++) {
+                stars.push(new Star());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(star => {
+                star.update();
+                star.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
 </body>
 </html>
