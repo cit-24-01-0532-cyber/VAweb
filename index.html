@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio | Fiverr Expert</title>
+    <title>Expert Virtual Assistant | Your Name</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         
         body { 
-            font-family: 'Inter', sans-serif; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
             scroll-behavior: smooth; 
             margin: 0;
             overflow-x: hidden;
-            background-color: #030712; /* Very Dark Blue/Black */
+            background-color: #020617; 
         }
 
-        /* Star Animation Canvas Styling */
         #starCanvas {
             position: fixed;
             top: 0;
@@ -34,14 +33,14 @@
         }
 
         .gradient-text { 
-            background: linear-gradient(90deg, #10b981, #3b82f6); 
+            background: linear-gradient(90deg, #38bdf8, #818cf8); 
             -webkit-background-clip: text; 
             -webkit-text-fill-color: transparent; 
         }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
@@ -51,94 +50,80 @@
     <canvas id="starCanvas"></canvas>
 
     <div class="content-wrapper">
-        <nav class="fixed w-full z-50 bg-gray-900/60 backdrop-blur-md border-b border-gray-800">
+        <nav class="fixed w-full z-50 bg-slate-950/60 backdrop-blur-md border-b border-slate-800">
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <div class="text-2xl font-bold gradient-text tracking-tighter">PRO-PORTFOLIO</div>
-                <div class="hidden md:flex space-x-8 text-xs uppercase tracking-widest font-medium">
-                    <a href="#home" class="hover:text-emerald-400 transition">Home</a>
-                    <a href="#work" class="hover:text-emerald-400 transition">Projects</a>
-                    <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
+                <div class="text-xl font-extrabold tracking-tight">VA<span class="text-sky-400">EXPERT</span></div>
+                <div class="hidden md:flex space-x-8 text-xs uppercase tracking-[0.2em] font-semibold">
+                    <a href="#home" class="hover:text-sky-400 transition">Home</a>
+                    <a href="#services" class="hover:text-sky-400 transition">Services</a>
+                    <a href="#contact" class="hover:text-sky-400 transition">Hire Me</a>
                 </div>
             </div>
         </nav>
 
         <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-4">
-            <div class="inline-block px-4 py-1 border border-emerald-500/30 rounded-full bg-emerald-500/10 text-emerald-400 text-xs mb-6 tracking-widest uppercase">
-                Available for Fiverr Freelance
+            <div class="inline-block px-4 py-1 border border-sky-500/30 rounded-full bg-sky-500/10 text-sky-400 text-[10px] mb-6 tracking-[0.3em] uppercase font-bold">
+                Top-Rated Virtual Assistant on Fiverr
             </div>
-            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tight">
-                Design. Code.<br><span class="gradient-text">Innovate.</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+                Streamline Your Work with<br><span class="gradient-text">Virtual Excellence.</span>
             </h1>
-            <p class="text-gray-400 max-w-lg mb-10 text-lg leading-relaxed">
-                මම ඔයාගේ අවශ්‍යතාවය අනුව උසස් මට්ටමේ වෙබ් අඩවි සහ මෘදුකාංග නිර්මාණය කරමි.
             </p>
             <div class="flex space-x-4">
-                <a href="#work" class="bg-emerald-500 hover:bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold transition shadow-lg shadow-emerald-500/20">
-                    Explore My Work
+                <a href="#services" class="bg-sky-500 hover:bg-sky-600 text-white px-10 py-4 rounded-full font-bold transition shadow-lg shadow-sky-500/20">
+                    My Services
                 </a>
             </div>
         </section>
 
-        <section id="work" class="py-24">
+        <section id="services" class="py-24 bg-slate-900/30">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="flex flex-col items-center mb-16 text-center">
-                    <h2 class="text-4xl font-bold mb-4">Latest Projects</h2>
-                    <div class="h-1 w-20 bg-emerald-500 rounded-full"></div>
+                    <h2 class="text-4xl font-bold mb-4">How I Can Help You</h2>
+                    <div class="h-1.5 w-16 bg-sky-500 rounded-full"></div>
                 </div>
                 
                 <div class="grid md:grid-cols-3 gap-8">
-                    <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
-                        <div class="h-52 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center relative overflow-hidden">
-                             <i class="fa-solid fa-layer-group text-5xl text-emerald-500/20 group-hover:scale-110 transition duration-500"></i>
-                             <div class="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition"></div>
+                    <div class="glass-card p-8 rounded-3xl hover:translate-y-[-10px] transition-all duration-300">
+                        <div class="w-14 h-14 bg-sky-500/20 rounded-2xl flex items-center justify-center mb-6 text-sky-400 text-2xl">
+                            <i class="fa-solid fa-database"></i>
                         </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-xl mb-3">Professional UI Kit</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Modern design systems built for scalability and performance.</p>
-                            <a href="#" class="text-emerald-400 font-bold text-sm tracking-wider uppercase hover:text-emerald-300">View Details →</a>
-                        </div>
+                        <h3 class="font-bold text-xl mb-3">Data Entry & Management</h3>
                     </div>
 
-                    <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
-                        <div class="h-52 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                             <i class="fa-solid fa-rocket text-5xl text-emerald-500/20 group-hover:scale-110 transition duration-500"></i>
+                    <div class="glass-card p-8 rounded-3xl hover:translate-y-[-10px] transition-all duration-300">
+                        <div class="w-14 h-14 bg-sky-500/20 rounded-2xl flex items-center justify-center mb-6 text-sky-400 text-2xl">
+                            <i class="fa-solid fa-envelope-open-text"></i>
                         </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-xl mb-3">SaaS Application</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Full-stack solutions with seamless user experiences.</p>
-                            <a href="#" class="text-emerald-400 font-bold text-sm tracking-wider uppercase">View Details →</a>
-                        </div>
+                        <h3 class="font-bold text-xl mb-3">Email & Calendar Support</h3>
+        
                     </div>
 
-                    <div class="glass-card rounded-2xl overflow-hidden hover:border-emerald-500/50 transition-all duration-300 group">
-                        <div class="h-52 bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                             <i class="fa-solid fa-code-branch text-5xl text-emerald-500/20 group-hover:scale-110 transition duration-500"></i>
+                    <div class="glass-card p-8 rounded-3xl hover:translate-y-[-10px] transition-all duration-300">
+                        <div class="w-14 h-14 bg-sky-500/20 rounded-2xl flex items-center justify-center mb-6 text-sky-400 text-2xl">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
-                        <div class="p-8">
-                            <h3 class="font-bold text-xl mb-3">API Integration</h3>
-                            <p class="text-gray-400 text-sm leading-relaxed mb-6">Complex backend systems and third-party integrations.</p>
-                            <a href="#" class="text-emerald-400 font-bold text-sm tracking-wider uppercase">View Details →</a>
-                        </div>
+                        <h3 class="font-bold text-xl mb-3">Web Research</h3>
+
                     </div>
                 </div>
             </div>
         </section>
 
-        <footer id="contact" class="py-20 border-t border-white/5 bg-black/20 text-center">
-            <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+        <footer id="contact" class="py-20 border-t border-white/5 text-center">
+            <h2 class="text-3xl font-bold mb-8 italic">Ready to scale your business?</h2>
             <div class="flex justify-center space-x-8 mb-10">
-                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-github"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" class="text-slate-400 hover:text-sky-400 text-2xl transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="text-slate-400 hover:text-sky-400 text-2xl transition"><i class="fa-solid fa-briefcase"></i></a>
+                <a href="#" class="text-slate-400 hover:text-sky-400 text-2xl transition"><i class="fa-solid fa-envelope"></i></a>
             </div>
-            <p class="text-gray-500 text-xs tracking-widest uppercase">© 2026 Your Name • Developed for Fiverr</p>
+            <p class="text-slate-500 text-[10px] tracking-widest uppercase font-bold">© 2026 Virtual Assistant Portfolio</p>
         </footer>
     </div>
 
     <script>
         const canvas = document.getElementById('starCanvas');
         const ctx = canvas.getContext('2d');
-
         let stars = [];
         const starCount = 150;
 
@@ -146,56 +131,36 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
         }
-
         window.addEventListener('resize', resizeCanvas);
         resizeCanvas();
 
         class Star {
-            constructor() {
-                this.reset();
-            }
-
+            constructor() { this.reset(); }
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
                 this.size = Math.random() * 2;
-                this.speed = Math.random() * 0.5 + 0.2;
+                this.speed = Math.random() * 0.5 + 0.1;
                 this.opacity = Math.random();
             }
-
             update() {
                 this.y += this.speed;
-                if (this.y > canvas.height) {
-                    this.y = -10;
-                    this.x = Math.random() * canvas.width;
-                }
+                if (this.y > canvas.height) { this.y = -10; this.x = Math.random() * canvas.width; }
             }
-
             draw() {
                 ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-                ctx.shadowBlur = 5;
-                ctx.shadowColor = "white";
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.fill();
             }
         }
 
-        function init() {
-            for (let i = 0; i < starCount; i++) {
-                stars.push(new Star());
-            }
-        }
-
+        function init() { for (let i = 0; i < starCount; i++) { stars.push(new Star()); } }
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(star => {
-                star.update();
-                star.draw();
-            });
+            stars.forEach(star => { star.update(); star.draw(); });
             requestAnimationFrame(animate);
         }
-
         init();
         animate();
     </script>
